@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUp"
-    android:background="@drawable/Sign_In">
+    android:background="@drawable/signin">
 
     <Button
         android:id="@+id/signup_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/Login"
+        android:background="@drawable/login"
         android:text="Sign Up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
         android:textColorHint="#000"
         android:textColor="#000"
         android:paddingLeft="10dp"
-        android:background="@drawable/Email"
+        android:background="@drawable/email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -48,7 +48,7 @@
         android:textColorHint="#000"
         android:textColor="#000"
         android:paddingLeft="10dp"
-        android:background="@drawable/Login"
+        android:background="@drawable/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -66,7 +66,7 @@
         android:textColorHint="#000"
         android:textColor="#000"
         android:paddingLeft="10dp"
-        android:background="@drawable/Password"
+        android:background="@drawable/password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +76,7 @@
         android:id="@+id/password_text_confirm_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/Password"
+        android:background="@drawable/password"
         android:ems="10"
         android:hint="Password Confirmation"
         android:inputType="textPassword"
@@ -99,7 +99,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.143"
-        app:srcCompat="@drawable/FoodBox" />
+        app:srcCompat="@drawable/foodbox" />
 
     <TextView
         android:id="@+id/notifikasi_text_view_signup"

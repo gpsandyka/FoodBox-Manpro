@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login"
-    android:background="@drawable/Sign_In">
+    android:background="@drawable/signin">
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/Login"
+        android:background="@drawable/login"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,19 +24,18 @@
         android:id="@+id/username_text_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/email"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:background="@drawable/Email"
         android:hint="Username"
-        android:textColorHint="#000"
-        android:textColor="#000"
+        android:inputType="textPersonName"
         android:paddingLeft="10dp"
+        android:textColor="#000"
+        android:textColorHint="#000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412" />
+        app:layout_constraintVertical_bias="0.404" />
 
     <EditText
         android:id="@+id/password_text_login"
@@ -44,7 +43,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:background="@drawable/Password"
+        android:background="@drawable/password"
         android:hint="Password"
         android:textColorHint="#000"
         android:textColor="#000"
@@ -63,7 +62,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.264"
-        app:srcCompat="@drawable/FoodBox" />
+        app:srcCompat="@drawable/foodbox" />
 
 
 
