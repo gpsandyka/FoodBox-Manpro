@@ -24,8 +24,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 User temp = DatabaseUser.loginVerification(usernameText.getText().toString(), passwordText.getText().toString());
                 if (temp != null) {
-                    //todo ngapain kalau berhasil login
-                    notifikasi.setText("Selamat! Anda Berhasil Login");
+                    startActivity(new Intent(Login.this, MainPage.class));
                 }
                 else {
                     //todo ngapain kalau gagal login
@@ -37,7 +36,6 @@ public class Login extends AppCompatActivity {
         final TextView signUpText = (TextView) findViewById(R.id.signup_text);
         signUpText.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // todo buka sign up nya
                 startActivity(new Intent(Login.this, SignUp.class));
             }
         });

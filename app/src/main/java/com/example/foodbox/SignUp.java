@@ -19,6 +19,7 @@ public class SignUp extends AppCompatActivity {
         final EditText passwordText = (EditText) findViewById(R.id.password_text_signup);
         final EditText passwordConfirmText = (EditText) findViewById(R.id.password_text_confirm_signup);
         final EditText emailText = (EditText) findViewById(R.id.email_text_signup);
+        final EditText noTelpText = (EditText) findViewById(R.id.no_telpon_text_signup);
         final TextView notifikasi = (TextView) findViewById(R.id.notifikasi_text_view_signup);
 
         final Button signupButton = (Button) findViewById(R.id.signup_button);
@@ -26,7 +27,7 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View v) {
                 //fixme bikin regex buat email + check username duplikat
                 if (passwordText.getText().toString().equals(passwordConfirmText.getText().toString())) {
-                    DatabaseUser.signup(emailText.getText().toString(), usernameText.getText().toString(), passwordText.getText().toString());
+                    DatabaseUser.signup(emailText.getText().toString(), noTelpText.getText().toString(), usernameText.getText().toString(), passwordText.getText().toString());
                     notifikasi.setText("Anda berhasil mendaftarkan diri!");
                     //finish(); //Ini buat nutup langsung activity ini
                 }

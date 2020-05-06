@@ -32,17 +32,17 @@ class DatabaseUser {
         return false;
     }
 
-    public static User loginVerification(String username, String password) {
+    public static User loginVerification(String email, String password) {
         for (User user : USER_DATABASE) {
-            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+            if (user.getEmailAddress().equals(email) && user.getPassword().equals(password)) {
                 return user;
             }
         }
         return null;
     }
 
-    public static boolean signup(String emailAddress, String username, String password) {
-        User temp = new User(username, password, emailAddress);
+    public static boolean signup(String emailAddress, String noTelp, String username, String password) {
+        User temp = new User(username, noTelp, password, emailAddress);
         addUser(temp);
         return true;
     }
