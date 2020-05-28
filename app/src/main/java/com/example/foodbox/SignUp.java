@@ -1,5 +1,7 @@
 package com.example.foodbox;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,8 +30,11 @@ public class SignUp extends AppCompatActivity {
                 //fixme bikin regex buat email + check username duplikat
                 if (passwordText.getText().toString().equals(passwordConfirmText.getText().toString())) {
                     DatabaseUser.signup(emailText.getText().toString(), noTelpText.getText().toString(), usernameText.getText().toString(), passwordText.getText().toString());
-                    notifikasi.setText("Anda berhasil mendaftarkan diri!");
-                    //finish(); //Ini buat nutup langsung activity ini
+                    //notifikasi.setText("Anda berhasil mendaftarkan diri!");
+                    Intent resultIntent = new Intent();
+                    setResult(Activity.RESULT_OK, resultIntent);
+
+                    finish(); //Ini buat nutup langsung activity ini
                 }
                 else {
                     //todo ngapain kalau gagal

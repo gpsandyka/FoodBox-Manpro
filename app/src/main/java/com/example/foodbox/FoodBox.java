@@ -1,30 +1,36 @@
 package com.example.foodbox;
 
+enum Status {
+    AVAILABLE, BORROWED
+}
+
 public class FoodBox {
 
-    private int foodboxID;
+    private int foodboxID; //kode produksi + warna RGB (111 = putih, 000 hitam) + nomor produksi
     private String size; //harusnya enum
     private String name;
     private String price;
-    private String status; //harusnya enum
+    private Status status;
     private String color; //harusnya enum
 
-    public FoodBox(String size, String price, String color) {
+    public FoodBox(String size, String price, String color, int foodboxID) {
         this.size = size;
         this.price = price;
         this.color = color;
+        this.foodboxID = foodboxID;
+        status = Status.AVAILABLE;
     }
-    public boolean borrowFoodBox(User user, FoodBox[] foodbox) {
+
+    public static boolean borrowFoodBox(User user, FoodBox[] foodbox) {
         for (FoodBox fb : foodbox) {
             user.addBorrowedFoodBox(fb);
+            fb.setStatus(Status.BORROWED);
         }
         return true;
     }
 
-    public boolean returnFoodBox(User user, FoodBox[] foodbox) {
-        for (FoodBox fb : foodbox) {
-            user.removeBorrowedFoodBox(fb);
-        }
+    public static boolean returnFoodBox(FoodBox fb) {
+        fb.setStatus(Status.AVAILABLE);
         return true;
     }
 
@@ -60,11 +66,11 @@ public class FoodBox {
         this.price = price;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 

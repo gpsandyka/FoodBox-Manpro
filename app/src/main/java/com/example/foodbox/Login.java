@@ -1,5 +1,6 @@
 package com.example.foodbox;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
+
+    final int SIGNUP_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +39,25 @@ public class Login extends AppCompatActivity {
         final TextView signUpText = (TextView) findViewById(R.id.signup_text);
         signUpText.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(Login.this, SignUp.class));
+                startActivityForResult(new Intent(Login.this, SignUp.class), SIGNUP_CODE);
             }
         });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch(requestCode) {
+            case (SIGNUP_CODE) : {
+                final TextView notifikasi = (TextView) findViewById(R.id.notifikasi_text_view_login);
+                if (resultCode == Activity.RESULT_OK) {
+                    notifikasi.setText("Anda berhasil mendaftarkan diri!");
+                }
+                else  {
+                    notifikasi.setText("");
+                }
+                break;
+            }
+        }
     }
 }

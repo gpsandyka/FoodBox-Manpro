@@ -16,7 +16,7 @@ public class MainPage extends AppCompatActivity {
         final Button peminjamanButton = (Button) findViewById(R.id.peminjaman_mainpage);
         peminjamanButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //todo kalau pencet peminjaman
+                startActivity(new Intent(MainPage.this, PeminjamanPage.class));
             }
         });
 
