@@ -1,7 +1,5 @@
 package com.example.foodbox;
 
-import android.icu.text.UnicodeSet;
-
 import java.util.ArrayList;
 
 class DatabaseUser {
@@ -30,6 +28,15 @@ class DatabaseUser {
 
     public static boolean removeUser() {
         return false;
+    }
+
+    public static User getUserFromEmail(String email) {
+        for (User user : USER_DATABASE) {
+            if (user.getEmailAddress().equals(email)) {
+                return user;
+            }
+        }
+        return null;
     }
 
     public static User loginVerification(String email, String password) {

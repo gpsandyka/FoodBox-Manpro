@@ -6,14 +6,14 @@ enum Status {
 
 public class FoodBox {
 
-    private int foodboxID; //kode produksi + warna RGB (111 = putih, 000 hitam) + nomor produksi
+    private final String foodboxID; //kode tanggal produksi + warna RGB (111 = putih, 000 hitam) + nomor produksi
     private String size; //harusnya enum
     private String name;
-    private String price;
+    private int price;
     private Status status;
     private String color; //harusnya enum
 
-    public FoodBox(String size, String price, String color, int foodboxID) {
+    public FoodBox(String size, int price, String color, String foodboxID) {
         this.size = size;
         this.price = price;
         this.color = color;
@@ -34,12 +34,8 @@ public class FoodBox {
         return true;
     }
 
-    public int getFoodboxID() {
+    public String getFoodboxID() {
         return foodboxID;
-    }
-
-    public void setFoodboxID(int foodboxID) {
-        this.foodboxID = foodboxID;
     }
 
     public String getSize() {
@@ -58,11 +54,11 @@ public class FoodBox {
         this.name = name;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

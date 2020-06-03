@@ -18,16 +18,17 @@ public class PengembalianPage extends AppCompatActivity {
         final Button kembalikanButton = (Button) findViewById(R.id.kembalikan_button_pengembalian_page);
         kembalikanButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                FoodBox temp = DatabaseFoodBox.searchFoodBoxByID(Integer.parseInt(idInput.getText().toString()));
-                if (temp != null & temp.getStatus() == Status.BORROWED) {
-                    FoodBox.returnFoodBox(temp);
-                    Intent i = new Intent(PengembalianPage.this,NotifikasiPengembalianBerhasil.class);
-                    startActivity(i);
-                    finish();
-                }
-                else {
-                    // Muncul notif ID tidak ditemukan
-                }
+                FoodBox temp = DatabaseFoodBox.searchFoodBoxByID(idInput.getText().toString());
+                    if (temp != null && temp.getStatus() == Status.BORROWED) {
+                        FoodBox.returnFoodBox(temp);
+                        Intent i = new Intent(PengembalianPage.this, NotifikasiPengembalianBerhasil.class);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        // Muncul notif ID tidak ditemukan
+                    }
+
             }
         });
     }

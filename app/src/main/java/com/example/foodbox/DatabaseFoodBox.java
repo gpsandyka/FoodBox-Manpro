@@ -31,9 +31,9 @@ class DatabaseFoodBox {
         return false;
     }
 
-    public static FoodBox searchFoodBoxByID(int ID) {
+    public static FoodBox searchFoodBoxByID(String ID) {
         for (FoodBox user : FOODBOX_DATABASE) {
-            if (user.getFoodboxID() == ID) {
+            if (user.getFoodboxID().equals(ID)) {
                 return user;
             }
         }
