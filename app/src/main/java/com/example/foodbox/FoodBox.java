@@ -6,7 +6,7 @@ enum Status {
 
 public class FoodBox {
 
-    private final String foodboxID; //kode tanggal produksi + warna RGB (111 = putih, 000 hitam) + nomor produksi
+    private final String foodboxID; //kode tanggal produksi + warna BGR decimal (111 = 8 putih, 000 = 0 hitam) + nomor produksi
     private String size; //harusnya enum
     private String name;
     private int price;
