@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name"><u>FoodBox</u></string>
     <string name="SignUp"><u>Sign Up</u></string>
+    <string-array name="Ukuran">
+        <item>Ukuran</item>
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+    <string-array name="Warna">
+        <item>Warna</item>
+        <item>Merah</item>
+        <item>Hijau</item>
+        <item>Biru</item>
+    </string-array>
 </resources>

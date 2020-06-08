@@ -12,11 +12,11 @@ public class NotifikasiPeminjamanBerhasil extends AppCompatActivity {
         setContentView(R.layout.activity_notifikasi_peminjaman_berhasil);
 
         Bundle extras = getIntent().getExtras();
-        int[] id = extras.getIntArray("ID");
+        String[] id = extras.getStringArray("ID");
 
         final TextView notifikasi = (TextView) findViewById(R.id.notifikasi_berhasil_pinjam);
         String textNotif = "Peminjaman FoodBox anda berhasil\n ID FoodBox yang dipinjam : \n";
-        for (int temp : id) {
+        for (String temp : id) {
             textNotif = textNotif + temp + "\n";
         }
         notifikasi.setText(textNotif);
