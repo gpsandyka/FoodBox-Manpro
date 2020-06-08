@@ -13,16 +13,16 @@ class DatabaseFoodBox {
         return FOODBOX_DATABASE;
     }
 
-    public static void setFoodBoxDatabase(ArrayList<FoodBox> userDatabase) {
-        FOODBOX_DATABASE = userDatabase;
+    public static void setFoodBoxDatabase(ArrayList<FoodBox> FoodBoxDatabase) {
+        FOODBOX_DATABASE = FoodBoxDatabase;
     }
 
     public static int getLastUserId() {
         return LAST_FOODBOX_ID;
     }
 
-    public static boolean addFoodBox(FoodBox user) {
-        FOODBOX_DATABASE.add(user);
+    public static boolean addFoodBox(FoodBox foodBox) {
+        FOODBOX_DATABASE.add(foodBox);
         return true;
     }
 
