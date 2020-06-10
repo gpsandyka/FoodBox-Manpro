@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+
 public class PeminjamanPage extends AppCompatActivity {
 
     @Override
@@ -49,12 +51,16 @@ public class PeminjamanPage extends AppCompatActivity {
                     jumlah = 0;
                 }
                 if (!ukuran.equals("Ukuran") && !warna.equals("Warna") && jumlah !=0) {
-                    String[] id = {"2905202010011","2905202010012"};
-                    // idnya benerin nanti
-                    Intent i = new Intent(PeminjamanPage.this,NotifikasiPeminjamanBerhasil.class);
-                    i.putExtra("ID", id);
-                    startActivity(i);
-                    finish();
+                    ArrayList<String> temp = FoodBox.borrowFoodBox(ukuran, warna, jumlah);
+                    if (temp == null) {
+                        //todo kalau FoodBoxnya nggak ada
+                    }
+                    else {
+                        Intent i = new Intent(PeminjamanPage.this, NotifikasiPeminjamanBerhasil.class);
+                        i.putExtra("ID", temp);
+                        startActivity(i);
+                        finish();
+                    }
                 }
                 else {
                     //todo kalau inputnya salah

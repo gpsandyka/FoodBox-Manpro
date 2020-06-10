@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class NotifikasiPeminjamanBerhasil extends AppCompatActivity {
 
     @Override
@@ -12,7 +14,7 @@ public class NotifikasiPeminjamanBerhasil extends AppCompatActivity {
         setContentView(R.layout.activity_notifikasi_peminjaman_berhasil);
 
         Bundle extras = getIntent().getExtras();
-        String[] id = extras.getStringArray("ID");
+        ArrayList<String> id = extras.getStringArrayList("ID");
 
         final TextView notifikasi = (TextView) findViewById(R.id.notifikasi_berhasil_pinjam);
         String textNotif = "Peminjaman FoodBox anda berhasil\n ID FoodBox yang dipinjam : \n";

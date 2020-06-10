@@ -21,18 +21,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //Item dummy
-        ArrayList<User> temp = DatabaseUser.getUserDatabase();
-        temp.add(new User("ff", "23", "23", "daika@gmail.com"));
-        DatabaseUser.setUserDatabase(temp);
-        int i;
-        for (i=0; i< 15; i++) {
-            DatabaseFoodBox.addFoodBox(new FoodBox("Small", 5000,  "Red", "290520201" + new DecimalFormat("0000").format(i)));
-        }
-        for (i=10; i< 15; i++) {
-            DatabaseFoodBox.searchFoodBoxByID("290520201" + new DecimalFormat("0000").format(i)).setStatus(Status.BORROWED);
-        }
-        //End of Item dummy
+        CreateDummyItem();
 
         final EditText usernameText = (EditText) findViewById(R.id.username_text_login);
         final EditText passwordText = (EditText) findViewById(R.id.password_text_login);
@@ -74,6 +63,80 @@ public class Login extends AppCompatActivity {
                 }
                 break;
             }
+        }
+    }
+
+    private void CreateDummyItem() {
+        //Item dummy buat percobaan
+        ArrayList<User> temp = DatabaseUser.getUserDatabase();
+        temp.add(new User("ff", "23", "23", "daika@gmail.com"));
+        DatabaseUser.setUserDatabase(temp);
+        int i;
+        // Yang small merah
+        for (i=0; i< 15; i++) {
+            DatabaseFoodBox.addFoodBox(new FoodBox("Small", 5000,  "Merah", "290520201" + new DecimalFormat("0000").format(i)));
+        }
+        for (i=10; i< 15; i++) {
+            DatabaseFoodBox.searchFoodBoxByID("290520201" + new DecimalFormat("0000").format(i)).setStatus(Status.BORROWED);
+        }
+        // Yang Medium merah
+        for (i=15; i< 30; i++) {
+            DatabaseFoodBox.addFoodBox(new FoodBox("Medium", 7000,  "Merah", "290520201" + new DecimalFormat("0000").format(i)));
+        }
+        for (i=25; i< 30; i++) {
+            DatabaseFoodBox.searchFoodBoxByID("290520201" + new DecimalFormat("0000").format(i)).setStatus(Status.BORROWED);
+        }
+        // Yang Large merah
+        for (i=30; i< 45; i++) {
+            DatabaseFoodBox.addFoodBox(new FoodBox("Large", 10000,  "Merah", "290520201" + new DecimalFormat("0000").format(i)));
+        }
+        for (i=40; i< 45; i++) {
+            DatabaseFoodBox.searchFoodBoxByID("290520201" + new DecimalFormat("0000").format(i)).setStatus(Status.BORROWED);
+        }
+
+        // Yang small hijau
+        for (i=0; i< 15; i++) {
+            DatabaseFoodBox.addFoodBox(new FoodBox("Small", 5000,  "Hijau", "290520202" + new DecimalFormat("0000").format(i)));
+        }
+        for (i=10; i< 15; i++) {
+            DatabaseFoodBox.searchFoodBoxByID("290520202" + new DecimalFormat("0000").format(i)).setStatus(Status.BORROWED);
+        }
+        // Yang Medium hijau
+        for (i=15; i< 30; i++) {
+            DatabaseFoodBox.addFoodBox(new FoodBox("Medium", 7000,  "Hijau", "290520202" + new DecimalFormat("0000").format(i)));
+        }
+        for (i=25; i< 30; i++) {
+            DatabaseFoodBox.searchFoodBoxByID("290520202" + new DecimalFormat("0000").format(i)).setStatus(Status.BORROWED);
+        }
+        // Yang Large hijau
+        for (i=30; i< 45; i++) {
+            DatabaseFoodBox.addFoodBox(new FoodBox("Large", 10000,  "Hijau", "290520202" + new DecimalFormat("0000").format(i)));
+        }
+        for (i=40; i< 45; i++) {
+            DatabaseFoodBox.searchFoodBoxByID("290520202" + new DecimalFormat("0000").format(i)).setStatus(Status.BORROWED);
+        }
+        //End of Item dummy
+
+        // Yang small biru
+        for (i=0; i< 15; i++) {
+            DatabaseFoodBox.addFoodBox(new FoodBox("Small", 5000,  "Biru", "290520204" + new DecimalFormat("0000").format(i)));
+        }
+        for (i=10; i< 15; i++) {
+            DatabaseFoodBox.searchFoodBoxByID("290520204" + new DecimalFormat("0000").format(i)).setStatus(Status.BORROWED);
+        }
+        // Yang Medium biru
+        for (i=15; i< 30; i++) {
+            DatabaseFoodBox.addFoodBox(new FoodBox("Medium", 7000,  "Biru", "290520204" + new DecimalFormat("0000").format(i)));
+        }
+        for (i=25; i< 30; i++) {
+            DatabaseFoodBox.searchFoodBoxByID("290520204" + new DecimalFormat("0000").format(i)).setStatus(Status.BORROWED);
+        }
+        // Yang Large biru
+        for (i=30; i< 45; i++) {
+            DatabaseFoodBox.addFoodBox(new FoodBox("Large", 10000,  "Biru", "290520204" + new DecimalFormat("0000").format(i)));
+        }
+        for (i=40; i< 45; i++) {
+            DatabaseFoodBox.searchFoodBoxByID("290520204" + new DecimalFormat("0000").format(i)).setStatus(Status.BORROWED);
         }
     }
 }

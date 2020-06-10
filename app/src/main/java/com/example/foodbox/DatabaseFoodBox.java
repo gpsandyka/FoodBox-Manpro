@@ -32,9 +32,18 @@ class DatabaseFoodBox {
     }
 
     public static FoodBox searchFoodBoxByID(String ID) {
-        for (FoodBox user : FOODBOX_DATABASE) {
-            if (user.getFoodboxID().equals(ID)) {
-                return user;
+        for (FoodBox foodBox : FOODBOX_DATABASE) {
+            if (foodBox.getFoodboxID().equals(ID)) {
+                return foodBox;
+            }
+        }
+        return null;
+    }
+
+    public static FoodBox searchAvailableFoodBox(String size, String color) {
+        for (FoodBox foodbox : FOODBOX_DATABASE) {
+            if (foodbox.getStatus() == Status.AVAILABLE && foodbox.getSize().equals(size) && foodbox.getColor().equals(color)) {
+                return foodbox;
             }
         }
         return null;

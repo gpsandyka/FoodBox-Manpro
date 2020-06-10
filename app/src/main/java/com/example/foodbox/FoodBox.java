@@ -1,5 +1,7 @@
 package com.example.foodbox;
 
+import java.util.ArrayList;
+
 enum Status {
     AVAILABLE, BORROWED
 }
@@ -21,12 +23,21 @@ public class FoodBox {
         status = Status.AVAILABLE;
     }
 
-    public static boolean borrowFoodBox(User user, FoodBox[] foodbox) {
-        for (FoodBox fb : foodbox) {
-            user.addBorrowedFoodBox(fb);
-            fb.setStatus(Status.BORROWED);
+    public static ArrayList<String> borrowFoodBox(String size, String color, int jumlah) {
+        ArrayList<String> temp = new ArrayList<String>();
+        FoodBox tempfb;
+        while (jumlah > 0) {
+            try {
+                tempfb = DatabaseFoodBox.searchAvailableFoodBox(size, color);
+                tempfb.setStatus(Status.BORROWED);
+                temp.add(tempfb.foodboxID);
+            }
+            catch (NullPointerException e) {
+                return null;
+            }
+            jumlah--;
         }
-        return true;
+        return temp;
     }
 
     public static boolean returnFoodBox(FoodBox fb) {
